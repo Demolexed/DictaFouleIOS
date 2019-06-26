@@ -84,7 +84,6 @@ namespace DictaFoule.Mobile.iOS
             {
                 var response = await ClientService.PostService<int>("Project/Create", new StringContent(query, Encoding.Unicode, "application/json"));
                 this.IdProject = response;
-                this.State = SoundState.Upload;
                 return true;
             }
             catch (RequestException ex)
