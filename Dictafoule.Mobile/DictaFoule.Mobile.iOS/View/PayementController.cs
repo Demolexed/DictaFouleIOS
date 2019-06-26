@@ -96,7 +96,7 @@ namespace DictaFoule.Mobile.iOS
 
                
             await SendAudio();
-            if (Item.State == Business.SoundState.New)
+            if (Item.IdProject == 0)
                 return;
             if (!await CreateToken())
                 return;
@@ -197,7 +197,10 @@ namespace DictaFoule.Mobile.iOS
                 return false;
             }
             else
+            {
+                this.Item.State = SoundState.Upload;
                 return true;
+            }
         }
     }
 }

@@ -84,7 +84,7 @@ namespace DictaFoule.Mobile.iOS.Business
                 Token stripeToken = await tokenService.CreateAsync(tokenOption);
                 return stripeToken.Id;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new RequestException(System.Net.HttpStatusCode.InternalServerError, "stripe erreur", "Erreur lors de la génération du token");
             }
