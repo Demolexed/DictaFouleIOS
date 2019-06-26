@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictaFoule.Mobile.iOS", "DictaFoule.Mobile.iOS.csproj", "{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		AdHoc|iPhone = AdHoc|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Release|iPhone.Build.0 = Release|iPhone
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.AdHoc|iPhone.ActiveCfg = AdHoc|iPhone
+		{7C5F116A-9F97-4C75-A75A-E6DC48C3D968}.AdHoc|iPhone.Build.0 = AdHoc|iPhone
+	EndGlobalSection
+EndGlobal
