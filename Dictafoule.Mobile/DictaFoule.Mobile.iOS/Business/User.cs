@@ -116,6 +116,12 @@ namespace DictaFoule.Mobile.iOS.Business
             await this.clientService.PostService<bool>("User/CreateUser", new StringContent(query, Encoding.Unicode, "application/json"));
         }
 
+        public async void SendEmail(SendEmailModel sendEmailModel)
+        {
+            var query = JsonConvert.SerializeObject(sendEmailModel);
+            await this.clientService.PostService<string>("Project/SendEmail", new StringContent(query, Encoding.Unicode, "application/json"));
+        }
+
         public void GetFiles()
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

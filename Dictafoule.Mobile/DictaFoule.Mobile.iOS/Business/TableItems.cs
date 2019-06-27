@@ -36,30 +36,34 @@ namespace DictaFoule.Mobile.iOS
             this.ClientService = new HttpClientService();
         }
 
-        public async void GetIdProject(string name, string guid)
+        public async Task<bool> GetIdProject(string name, string guid)
         {
             try
             {
                 var response = await ClientService.GetService<int>("Project/GetIdProject?nameFile=" + name + "&guidElements=" + guid);
                 this.IdProject = response;
+                return true;
             }
             catch (RequestException ex)
             {
                 this.IdProject = 0;
+                return false;
             }
 
         }
 
-        public async void GetStateProject(string guid)
+        public async Task<bool> GetStateProject(string guid)
         {
             try
             {
                 var response = await ClientService.GetService<int>("Project/GetStateProject?id_project=" + IdProject.ToString() + "&guidElements=" + guid);
                 this.State = (SoundState)(response);
+                return true;
             }
             catch(RequestException ex)
             {
                 this.State = SoundState.New;
+                return false;
             }
             
         }
@@ -93,10 +97,11 @@ namespace DictaFoule.Mobile.iOS
             }
         }
 
-        public async void GetTranscriptProject(string guid)
+        public async Task<bool> GetTranscriptProject(string guid)
         {
             var response = await ClientService.GetService<string>("Project/GetTranscrib?id_project=" + IdProject.ToString() + "&guidElements=" + guid);
             this.Transcription = response;
+            return true;
         }
 
         public bool IsWaiting

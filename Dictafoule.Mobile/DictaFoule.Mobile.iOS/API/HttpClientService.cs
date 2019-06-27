@@ -10,8 +10,8 @@ namespace DictaFoule.Mobile.iOS.API
     {
         #region constante
 
-        private const string api = "https://dev-api-dictafoule.azurewebsites.net/v1/";
-        //private const string api = "https://api-dictafoule.azurewebsites.net/v1/";
+        //private const string api = "https://dev-api-dictafoule.azurewebsites.net/v1/";
+        private const string api = "https://api-dictafoule.azurewebsites.net/v1/";
         private const string healtcheck = "HealthCheck/HealthChecking";
 
         #endregion

@@ -69,13 +69,15 @@ namespace DictaFoule.Mobile.iOS
             OptionBtn.Hidden = true;
             ExportBtn.Hidden = true;
 
-            Item.Update();
+            
 
         }
 
-        public override void ViewWillAppear(bool animated)
+        public async override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await Item.GetIdProject(Item.Name, Item.Guid);
+            await Item.GetStateProject(Item.Guid);
             NameRecordTxt.Text = Item.Name;
             if (Item.State == Business.SoundState.New)
                 AskTranscrib.Hidden = false;
@@ -88,10 +90,10 @@ namespace DictaFoule.Mobile.iOS
             }
             if (Item.State == Business.SoundState.ProjectCompleted)
             {
-                Item.GetTranscriptProject(UIDevice.CurrentDevice.IdentifierForVendor.AsString());
+                await Item.GetTranscriptProject(UIDevice.CurrentDevice.IdentifierForVendor.AsString());
                 TranscriptionTxt.Hidden = false;
                 TranscriptionTxt.Text = Item.Transcription;
-                OptionBtn.Hidden = false;
+                OptionBtn.Hidden = true;
                 ExportBtn.Hidden = false;
                 ActivityIndicartorTranscrib.Hidden = true;
                 ActivityIndicartorTranscrib.StopAnimating();

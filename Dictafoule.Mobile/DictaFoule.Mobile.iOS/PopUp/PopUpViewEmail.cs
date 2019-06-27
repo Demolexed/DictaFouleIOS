@@ -81,7 +81,7 @@ namespace DictaFoule.Mobile.iOS
                         var nsUid = UIDevice.CurrentDevice.IdentifierForVendor;
                         var guidElements = nsUid.AsString();
                         var sendEmailModel = new SendEmailModel { GuidElements = guidElements, Email = SaveFile.Text, IdProject = viewc.Item.IdProject };
-                       await ApiCall.SendEmail(sendEmailModel);
+                        this.detailViewController.User.SendEmail(sendEmailModel);
                         Close();
                     }
 

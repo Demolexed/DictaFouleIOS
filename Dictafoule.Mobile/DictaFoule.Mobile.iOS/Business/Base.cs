@@ -9,7 +9,7 @@ namespace DictaFoule.Mobile.iOS.Business
         /// Unique phone Identifier 
         /// </summary>
         /// <value>The GUID.</value>
-        protected string Guid { get; set; }
+        public string Guid { get; set; }
 
         public Base()
         {

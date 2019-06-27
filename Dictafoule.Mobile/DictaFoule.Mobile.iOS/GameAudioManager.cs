@@ -190,6 +190,8 @@ namespace DictaFoule.Mobile.iOS
 
         public void Dispose()
         {
+            if (soundEffect == null)
+                return;
             soundEffect.Stop();
             soundEffect.Dispose();
         }

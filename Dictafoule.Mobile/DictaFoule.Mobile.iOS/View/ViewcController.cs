@@ -12,6 +12,7 @@ using System.Net;
 using DictaFoule.Mobile.iOS.API;
 using System.Threading.Tasks;
 using DictaFoule.Mobile.iOS.Business;
+using Plugin.Connectivity;
 
 namespace DictaFoule.Mobile.iOS
 {
@@ -45,7 +46,16 @@ namespace DictaFoule.Mobile.iOS
         {
             base.ViewDidLoad();
 
-            NameFile.Text = "Nouvel Enregistrement";
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+
+                var erreurAlertController = UIAlertController.Create("Erreur", "Internet n'est pas disponible", UIAlertControllerStyle.Alert);
+                erreurAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                PresentViewController(erreurAlertController, true, null);
+                System.Threading.Thread.CurrentThread.Abort();
+            }
+
+                NameFile.Text = "Nouvel Enregistrement";
 
 
 
@@ -85,6 +95,7 @@ namespace DictaFoule.Mobile.iOS
 
             TableRecordView = new UITableView(new CGRect(0, gradientLayerBlue.Frame.Y + gradientLayerBlue.Frame.Height, View.Bounds.Width, gradientLayerOrange.Frame.Height * 0.60));
 
+      
             this.User = new User();
             TableRecordView.Source = new TableSource(User.Sounds, this);
             TableRecordView.ScrollEnabled = true;
